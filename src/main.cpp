@@ -1,8 +1,10 @@
 #include <iostream>
+#include <string>
 
-#include "board.hpp"
+#include "game.hpp"
 
 int main() {
-	Board board = Board();
-	std::cout << board << std::endl;
+	std::string starting_pos = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+	Game game = Game(starting_pos);
+	std::cout << game << std::endl;
 }

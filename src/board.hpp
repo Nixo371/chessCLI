@@ -1,3 +1,6 @@
+#ifndef BOARD_H
+# define BOARD_H
+
 #include <vector>
 #include <ostream>
 
@@ -7,42 +10,12 @@ class Board {
 	private:
 		std::vector<std::vector<Tile>> tiles;
 	public:
-		Board(int ranks = 8, int files = 8) {
-			tiles = std::vector<std::vector<Tile>>();
-			for (int rank = 0; rank < ranks; rank++) {
-				tiles.push_back(std::vector<Tile>());
-				for (int file = 0; file < files; file++) {
-					tiles[rank].push_back(Tile(rank, file));
-				}
-			}
-		}
+		Board(int ranks = 8, int files = 8);
 
-		std::vector<std::vector<Tile>> get_board() const {
-			return (this->tiles);
-		}
-		friend std::ostream& operator<< (std::ostream& out, const Board& board);
-		
+		std::vector<std::vector<Tile>> get_board() const;
+		void set_tile(int rank, int file, PieceType piece);
 };
 
-std::ostream& operator<< (std::ostream& out, const Board& board) {
-	// Print top line
-	out << "┏━━━┳━━━┳━━━┳━━━┳━━━┳━━━┳━━━┳━━━┓" << std::endl;
-	// Iterate through board pieces, then a divider, then a line
-	// Iterate through board pieces, then a divider, then a line
-	std::vector<std::vector<Tile>> tiles = board.get_board();
-	for (std::vector<Tile> rank : tiles) {
-		std::cout << "┃";
-		for (Tile tile : rank) {
-			out << " " << tile << " " << "┃";
-		}
-		out << std::endl;
-		if (tiles.back() != rank) {
-			out << "┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫" << std::endl;
-		}
-	}
+std::ostream& operator<< (std::ostream& out, const Board& board);
 
-	// Print bottom line
-	out << "┗━━━┻━━━┻━━━┻━━━┻━━━┻━━━┻━━━┻━━━┛";
-
-	return (out);
-}
+#endif

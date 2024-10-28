@@ -1,31 +1,20 @@
-#include <string>
+#ifndef FEN_H
+# define FEN_H
 
-#include "game.hpp"
+#include <string>
+#include <stdlib.h>
+
+#include "gamemetadata.hpp"
+class Board;
 
 class FEN {
 	private:
-		void decode_board(std::string board_fen, Board board) {
-		
-		}
-
-		void decode_metadata(std::string metadata_fen, Game game) {
-		
-		}
+		static Board decode_board_bfen(std::string board_fen);
+		static GameMetadata decode_metadata_mfen(std::string metadata_fen);
+	
 	public:
-		static Game decode(std::string fen) {
-			Game game = Game();
-			Board board = game.get_board();
-			
-			std::string board_fen = fen.substr(0, fen.find(" "));
-			std::cout << "Board FEN: " << board_fen << "|" << std::endl;
+		static Board decode_board(std::string fen);
+		static GameMetadata decode_metadata(std::string fen);
+};
 
-			decode_board(board_fen, board);
-			
-			std::string metadata_fen = fen.substr(fen.find(" ") + 1, fen.length());
-			std::cout << "Metadata FEN: " << metadata_fen << "|" << std::endl;
-
-			decode_metadata(metadata_fen, game);
-
-			return (game);
-		}
-}
+#endif

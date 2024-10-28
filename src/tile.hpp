@@ -1,47 +1,30 @@
+#ifndef TILE_H
+# define TILE_H
+
 #include <ostream>
 
 #include "piece.hpp"
 
 class Tile {
 	private:
-		int x;
-		int y;
+		int rank;
+		int file;
 		Piece piece;
 		
-		void set_piece(Piece piece) {
-			this->piece = piece;
-		}
+		void set_piece(Piece piece);
+
+	public:
+		Tile();
+		Tile(int rank, int file);
+
+		void set_piece(PieceType piece);
+		int get_rank() const;
+		int get_file() const;
+		Piece get_piece() const;
 
 		friend std::ostream& operator<< (std::ostream& out, const Tile& tile);
-	public:
-		Tile(int x, int y) {
-			this->x = x;
-			this->y = y;
-		}
-
-		void set_piece(PieceType piece) {
-			this->piece = Piece(piece);
-		}
-
-		int get_x() const {
-			return (this->x);
-		}
-
-		int get_y() const {
-			return (this->y);
-		}
-
-		Piece get_piece() const {
-			return (this->piece);
-		}
 };
 
-bool operator== (const Tile& tile1, const Tile& tile2) {
-	return (tile1.get_x() == tile2.get_x() && tile1.get_y() == tile2.get_y());
-}
+bool operator== (const Tile& tile1, const Tile& tile2);
 
-std::ostream& operator<< (std::ostream& out, const Tile& tile) {
-	out << tile.get_piece();
-
-	return (out);
-}
+#endif

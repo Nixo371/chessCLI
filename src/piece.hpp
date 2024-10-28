@@ -1,13 +1,16 @@
+#ifndef PIECE_H
+# define PIECE_H
+
 #include <iostream>
 
 enum PieceType {
-	NONE = ' ',
-	PAWN = '♙',
-	KNIGHT = '♘',
-	BISHOP = '♗',
-	ROOK = '♖',
-	QUEEN = '♕',
-	KING = '♔'
+	NONE,
+	PAWN,
+	KNIGHT,
+	BISHOP,
+	ROOK,
+	QUEEN,
+	KING
 };
 
 class Piece {
@@ -15,15 +18,11 @@ class Piece {
 		PieceType type;
 
 	public:
-		Piece(PieceType type = NONE) {
-			this->type = type;
-		}
-
-		PieceType get_type() const {
-			return (this->type);
-		}
-
+		Piece(PieceType type = NONE);
+		PieceType get_type() const;
+		
 };
-
-
+		
 std::ostream& operator<< (std::ostream& out, const Piece& piece);
+
+#endif
