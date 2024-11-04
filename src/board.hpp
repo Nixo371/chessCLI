@@ -13,7 +13,7 @@ class Board {
 		Board(int ranks = 8, int files = 8);
 
 		std::vector<std::vector<Tile>> get_board() const;
-		void set_tile(int rank, int file, PieceType piece);
+		void set_tile(int rank, int file, PieceType piece, PieceColor color);
 };
 
 std::ostream& operator<< (std::ostream& out, const Board& board);

@@ -17,7 +17,7 @@ class Tile {
 		Tile();
 		Tile(int rank, int file);
 
-		void set_piece(PieceType piece);
+		void set_piece(PieceType piece, PieceColor color);
 		int get_rank() const;
 		int get_file() const;
 		Piece get_piece() const;

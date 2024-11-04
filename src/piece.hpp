@@ -13,13 +13,20 @@ enum PieceType {
 	KING
 };
 
+enum PieceColor {
+	WHITE,
+	BLACK
+};
+
 class Piece {
 	private:
 		PieceType type;
+		PieceColor color;
 
 	public:
-		Piece(PieceType type = NONE);
+		Piece(PieceType type = NONE, PieceColor color = WHITE);
 		PieceType get_type() const;
+		PieceColor get_color() const;
 		
 };
 		

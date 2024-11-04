@@ -13,35 +13,42 @@ Board FEN::decode_board_bfen(std::string board_fen) {
 	int file = 0;
 
 	for (char c : board_fen) {
+		PieceColor color = PieceColor::WHITE;
 		switch (c) {
 			case 'p':
+				color = PieceColor::BLACK;
 			case 'P':
-				board.set_tile(rank, file, PieceType::PAWN);
+				board.set_tile(rank, file, PieceType::PAWN, color);
 				file++;
 				break;
 			case 'n':
+				color = PieceColor::BLACK;
 			case 'N':
-				board.set_tile(rank, file, PieceType::KNIGHT);
+				board.set_tile(rank, file, PieceType::KNIGHT, color);
 				file++;
 				break;
 			case 'b':
+				color = PieceColor::BLACK;
 			case 'B':
-				board.set_tile(rank, file, PieceType::BISHOP);
+				board.set_tile(rank, file, PieceType::BISHOP, color);
 				file++;
 				break;
 			case 'r':
+				color = PieceColor::BLACK;
 			case 'R':
-				board.set_tile(rank, file, PieceType::ROOK);
+				board.set_tile(rank, file, PieceType::ROOK, color);
 				file++;
 				break;
 			case 'q':
+				color = PieceColor::BLACK;
 			case 'Q':
-				board.set_tile(rank, file, PieceType::QUEEN);
+				board.set_tile(rank, file, PieceType::QUEEN, color);
 				file++;
 				break;
 			case 'k':
+				color = PieceColor::BLACK;
 			case 'K':
-				board.set_tile(rank, file, PieceType::KING);
+				board.set_tile(rank, file, PieceType::KING, color);
 				file++;
 				break;
 			case '/':

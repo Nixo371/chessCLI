@@ -1,12 +1,17 @@
 #include "piece.hpp"
 
 
-Piece::Piece(PieceType type) {
+Piece::Piece(PieceType type, PieceColor color) {
 	this->type = type;
+	this->color = color;
 }
 
 PieceType Piece::get_type() const {
 	return (this->type);
+}
+
+PieceColor Piece::get_color() const {
+	return (this->color);
 }
 
 std::ostream& operator<< (std::ostream& out, const Piece& piece) {
@@ -33,7 +38,6 @@ std::ostream& operator<< (std::ostream& out, const Piece& piece) {
 		default:
 			p = " ";
 	}
-
 	out << p;
 	return (out);
 }

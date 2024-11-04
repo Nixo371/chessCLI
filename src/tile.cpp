@@ -1,5 +1,8 @@
 #include "tile.hpp"
 
+#define WHITE_PIECE "\033[38;5;255m"  // White piece color
+#define BLACK_PIECE "\033[38;5;0m"    // Black piece color
+
 Tile::Tile() {
 	
 }
@@ -15,8 +18,8 @@ void Tile::set_piece(Piece piece) {
 }
 
 // PUBLIC
-void Tile::set_piece(PieceType piece) {
-	this->piece = Piece(piece);
+void Tile::set_piece(PieceType piece, PieceColor color) {
+	this->piece = Piece(piece, color);
 }
 
 int Tile::get_rank() const {
@@ -37,6 +40,12 @@ bool operator== (const Tile& tile1, const Tile& tile2) {
 }
 
 std::ostream& operator<< (std::ostream& out, const Tile& tile) {
+	if (tile.get_piece().get_color() == PieceColor::WHITE) {
+		out << WHITE_PIECE;
+	}
+	else {
+		out << BLACK_PIECE;
+	}
 	out << tile.get_piece();
 
 	return (out);
