@@ -2,7 +2,8 @@
 # define GAMEMETADATA_H
 
 #include <vector>
-#include "tile.hpp"
+
+#include "../tile/tile.hpp"
 
 struct GameMetadata {
 	int turn;

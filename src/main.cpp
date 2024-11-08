@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "game.hpp"
+#include "game/game.hpp"
 
 int main(int argc, char *argv[]) {
 	std::string starting_pos = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";

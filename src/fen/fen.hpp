@@ -4,7 +4,7 @@
 #include <string>
 #include <stdlib.h>
 
-#include "gamemetadata.hpp"
+#include "../game/gamemetadata.hpp"
 class Board;
 
 class FEN {

@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 
-#include "board.hpp"
+#include "../board/board.hpp"
 #include "gamemetadata.hpp"
 
 class Game {
@@ -16,6 +16,7 @@ class Game {
 		Game(std::string fen);
 
 		Board get_board() const;
+		int get_turn();
 };
 
 std::ostream& operator<< (std::ostream& out, const Game& game);

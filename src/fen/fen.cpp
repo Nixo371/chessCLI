@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "fen.hpp"
-#include "board.hpp"
+#include "../board/board.hpp"
 
 // PRIVATE
 Board FEN::decode_board_bfen(std::string board_fen) {

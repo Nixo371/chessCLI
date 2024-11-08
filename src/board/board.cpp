@@ -1,4 +1,5 @@
 #include "board.hpp"
+
 #define RESET "\033[0m"        // Reset to default color
 #define LIGHT_SQUARE "\033[48;5;143m" // Light tan background
 #define DARK_SQUARE "\033[48;5;58m"  // Dark gray-olive background
@@ -19,6 +20,10 @@ std::vector<std::vector<Tile>> Board::get_board() const {
 
 void Board::set_tile(int rank, int file, PieceType piece, PieceColor color) {
 	tiles[rank][file].set_piece(piece, color);
+}
+
+Tile Board::get_tile(int rank, int file) {
+	return (this->tiles[rank][file]);
 }
 
 

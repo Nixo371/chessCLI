@@ -3,7 +3,7 @@
 
 #include <ostream>
 
-#include "piece.hpp"
+#include "../piece/piece.hpp"
 
 class Tile {
 	private:

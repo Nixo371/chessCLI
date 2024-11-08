@@ -4,7 +4,7 @@
 #include <iostream>
 
 enum PieceType {
-	NONE,
+	EMPTY,
 	PAWN,
 	KNIGHT,
 	BISHOP,
@@ -24,7 +24,7 @@ class Piece {
 		PieceColor color;
 
 	public:
-		Piece(PieceType type = NONE, PieceColor color = WHITE);
+		Piece(PieceType type = PieceType::EMPTY, PieceColor color = PieceColor::WHITE);
 		PieceType get_type() const;
 		PieceColor get_color() const;
 		

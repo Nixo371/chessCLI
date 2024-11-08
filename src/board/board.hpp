@@ -4,7 +4,7 @@
 #include <vector>
 #include <ostream>
 
-#include "tile.hpp"
+#include "../tile/tile.hpp"
 
 class Board {
 	private:
@@ -14,6 +14,7 @@ class Board {
 
 		std::vector<std::vector<Tile>> get_board() const;
 		void set_tile(int rank, int file, PieceType piece, PieceColor color);
+		Tile get_tile(int rank, int file);
 };
 
 std::ostream& operator<< (std::ostream& out, const Board& board);
