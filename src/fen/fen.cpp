@@ -9,7 +9,7 @@ Board FEN::decode_board_bfen(std::string board_fen) {
 
 	Board board = Board();
 
-	int rank = 0;
+	int rank = 7;
 	int file = 0;
 
 	for (char c : board_fen) {
@@ -52,7 +52,7 @@ Board FEN::decode_board_bfen(std::string board_fen) {
 				file++;
 				break;
 			case '/':
-				rank++;
+				rank--;
 				file = 0;
 				break;
 			default: // in the case of a number

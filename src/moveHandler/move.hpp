@@ -3,7 +3,8 @@
 
 #include "move_type.hpp"
 #include "../tile/tile.hpp"
-#include "../game/game.hpp"
+
+class Game;
 
 class Move {
 	private:
@@ -14,6 +15,8 @@ class Move {
 		PieceType promotion_piece;
 	public:
 		Move(std::string move, Game game);
+		Tile get_from();
+		Tile get_to();
 };
 
 #endif

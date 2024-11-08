@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "../board/board.hpp"
+#include "../moveHandler/move.hpp"
 #include "gamemetadata.hpp"
 
 class Game {
@@ -14,7 +15,9 @@ class Game {
 	public:
 		Game();
 		Game(std::string fen);
-
+		
+		bool play_move(Move move);
+		
 		Board get_board() const;
 		int get_turn();
 };

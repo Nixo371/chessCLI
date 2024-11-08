@@ -50,7 +50,7 @@ std::ostream& operator<< (std::ostream& out, const Board& board) {
 */
 	// Iterate through board pieces
 	std::vector<std::vector<Tile>> tiles = board.get_board();
-	for (int rank = 0; rank < 8; rank++) {
+	for (int rank = 7; rank >= 0; rank--) {
 		for (int file = 0; file < 8; file++) {
 			if ((rank + file) % 2) {
 				out << LIGHT_SQUARE;

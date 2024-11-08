@@ -131,7 +131,7 @@ Move::Move(std::string move, Game game) {
 	Board board = game.get_board();
 	std::vector<Tile> mask;
 
-	if (from_rank != -1 && from_file != -1) { // Only generate mask if necessary
+	if (from_rank == -1 || from_file == -1) { // Only generate mask if necessary
 		// Get a mask of all positions of all the pieces of the type
 		mask = BoardHelper::get_piece_mask(piece, board); 
 	}
@@ -171,4 +171,12 @@ Move::Move(std::string move, Game game) {
 
 	this->from = board.get_tile(from_rank, from_file);
 	this->to = board.get_tile(to_rank, to_file);
+}
+
+Tile Move::get_from() {
+	return (this->from);
+}
+
+Tile Move::get_to() {
+	return (this->to);
 }

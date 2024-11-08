@@ -11,13 +11,12 @@ class Tile {
 		int file;
 		Piece piece;
 		
-		void set_piece(Piece piece);
-
 	public:
 		Tile();
 		Tile(int rank, int file);
 
 		void set_piece(PieceType piece, PieceColor color);
+		void set_piece(Piece piece);
 		int get_rank() const;
 		int get_file() const;
 		Piece get_piece() const;
