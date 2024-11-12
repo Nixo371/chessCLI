@@ -3,6 +3,7 @@ A little CLI program written in C++ to play chess right in your command line!
 
 ### DISCLAIMER
 chessCLI does not actually work yet, it is still a WIP
+
 See the issues tab for things that still need to be done
 
 
