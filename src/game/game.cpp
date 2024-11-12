@@ -16,7 +16,7 @@ bool Game::play_move(Move move) {
 	Tile to = move.get_to();
 	
 	this->board.set_tile(to.get_rank(), to.get_file(), from.get_piece().get_type(), from.get_piece().get_color());
-	this->board.set_tile(from.get_rank(), from.get_file(), PieceType::EMPTY, PieceColor::WHITE);
+	this->board.set_tile(from.get_rank(), from.get_file(), PieceType::NONE, PieceColor::WHITE);
 
 	this->metadata.turn = (this->metadata.turn + 1) % 2;
 	this->metadata.half_moves++;

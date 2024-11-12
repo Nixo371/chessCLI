@@ -1,7 +1,7 @@
 #ifndef MOVE_TYPE_H
 # define MOVE_TYPE_H
 
-enum MoveType {
+enum class MoveType {
 	NONE,
 	NORMAL,
 	CAPTURE,

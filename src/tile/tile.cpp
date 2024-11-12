@@ -10,7 +10,7 @@ Tile::Tile() {
 Tile::Tile(int rank, int file) {
 	this->rank = rank;
 	this->file = file;
-	this->piece = Piece(PieceType::EMPTY, PieceColor::WHITE);
+	this->piece = Piece(PieceType::NONE, PieceColor::WHITE);
 }
 
 // PRIVATE
