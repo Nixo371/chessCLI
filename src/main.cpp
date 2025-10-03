@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-#include "game/game.hpp"
-#include "moveHandler/move.hpp"
+#include "game.hpp"
+#include "move.hpp"
 
 int main(int argc, char *argv[]) {
 	std::string starting_pos = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";

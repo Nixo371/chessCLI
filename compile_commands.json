@@ -1,0 +1,34 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "src/board_helper.o",
+      "src/board_helper.cpp"
+    ],
+    "directory": "/home/nucieda/Projects/chessCLI",
+    "file": "/home/nucieda/Projects/chessCLI/src/board_helper.cpp",
+    "output": "/home/nucieda/Projects/chessCLI/src/board_helper.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "src/move.o",
+      "src/move.cpp"
+    ],
+    "directory": "/home/nucieda/Projects/chessCLI",
+    "file": "/home/nucieda/Projects/chessCLI/src/move.cpp",
+    "output": "/home/nucieda/Projects/chessCLI/src/move.o"
+  }
+]
